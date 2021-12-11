@@ -1,0 +1,40 @@
+<form #inputForm="ngForm" (ngSubmit)="onSubmit(inputForm)">
+  <div class="field is-horizontal">
+    <div class="field-body">
+      <div class="field is-narrow">
+        <p class="control">
+          <input
+            type="number"
+            style="width: 100px"
+            class="input"
+            placeholder="Miktar"
+            name="amount"
+            [ngModel]="item.amount"
+            required
+          />
+        </p>
+      </div>
+      <div class="field">
+        <p class="control">
+          <input
+            type="text"
+            class="input"
+            placeholder="Açıklama"
+            name="description"
+            [ngModel]="item.description"
+            required
+          />
+        </p>
+      </div>
+      <div class="field is-narrow">
+        <button
+          type="submit"
+          class="button is-primary"
+          [disabled]="!inputForm.valid"
+        >
+          Ekle
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
